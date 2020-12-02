@@ -1,15 +1,19 @@
 ## gpt_3_dart
+
 A simple Dart package to use with OpenAI's GPT-3 API.
 
 ### Installation
-```
+
+```yaml
 dependencies:
 	flutter:
 		sdk: flutter
 	gpt_3_dart:
 ```
-###  Usage
-```
+
+### Usage
+
+```dart
 import  'package:gpt_3_dart/gpt_3_dart.dart';
 
 void  main() async {
@@ -20,10 +24,9 @@ void  main() async {
 	print(search);
 }
 ```
+
 ### Example App
 
-Text Completion            |  Semantic Search
-:-------------------------:|:-------------------------:
- ![](doc/completion.jpg)|![](doc/semantic.jpg)
-
-
+|     Text Completion     |    Semantic Search    |
+| :---------------------: | :-------------------: |
+| ![](doc/completion.jpg) | ![](doc/semantic.jpg) |
