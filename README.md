@@ -24,6 +24,6 @@ void  main() async {
 
 Text Completion            |  Semantic Search
 :-------------------------:|:-------------------------:
- ![](docs/completion.jpg)|![](docs/semantic.jpg)
+ ![](doc/completion.jpg)|![](doc/semantic.jpg)
 
 
