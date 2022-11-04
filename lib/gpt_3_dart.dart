@@ -1,10 +1,10 @@
 library gpt3_dart;
 
-import 'package:meta/meta.dart';
-import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:http/http.dart' as http;
 
 
 class Param {
@@ -20,10 +20,10 @@ class Param {
 }
 
 class OpenAI {
-  String apiKey;
-  OpenAI({@required this.apiKey});
+  final String apiKey;
+  OpenAI({required this.apiKey});
 
-  String getUrl(function, [engine]) {
+  Uri getUrl(function, [engine]) {
     List engineList = ['ada', 'babbage', 'curie', 'davinci'];
 
     String url = 'https://api.openai.com/v1/engines/davinci/$function';
@@ -31,17 +31,17 @@ class OpenAI {
     if (engineList.contains(engine)) {
       url = 'https://api.openai.com/v1/engines/$engine/$function';
     }
-    return url;
+    return Uri.parse(url);
   }
 
   Future<String> complete(String prompt, int maxTokens,
-      {num temperature,
-      num topP,
-      int n,
-      bool stream,
-      int logProbs,
-      bool echo,
-      String engine}) async {
+      {num? temperature,
+      num? topP,
+      int? n,
+      bool? stream,
+      int? logProbs,
+      bool? echo,
+      String? engine}) async {
     String apiKey = this.apiKey;
 
     List data = [];
